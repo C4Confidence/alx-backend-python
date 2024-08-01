@@ -10,6 +10,7 @@ from typing import Callable
 
 def make_multiplier(multiplier: float) -> Callable[[float], float]:
     def multiplier_function(value: float) -> float:
+        """Return Value Multiplier"""
         return value * multiplier
         """Return multiplier function"""
     return multiplier_function
