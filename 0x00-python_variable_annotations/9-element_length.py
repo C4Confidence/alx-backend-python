@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
-"""Annotate the below function’s parameters and return 
+"""Annotate the below function’s parameters and return
 values with the appropriate types
  return [(i, len(i)) for i in lst]"""
 
-from typing import List, Tuple, Iterable
+import typing
 
 
-def element_length(lst: Iterable[str]) -> List[Tuple[str, int]]:
-    """Returns the lenght and types"""
+def element_length(lst: typing.Iterable[typing.Sequence]) -> \
+        typing.List[typing.Tuple[typing.Sequence, int]]:
+    """Returns a list of tuples"""
     return [(i, len(i)) for i in lst]
