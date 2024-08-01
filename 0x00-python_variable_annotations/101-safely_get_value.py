@@ -4,20 +4,13 @@ and apply any necessary changes.
 """
 
 
-from typing import Tuple, List, Any
+from typing import TypeVar, Dict, Optional
 
+T = TypeVar('T')
 
-def zoom_array(lst: Tuple, factor: int = 2) -> List:
-    """Corrected annotations"""
-    zoomed_in: List = [
-        item for item in lst
-        for i in range(factor)
-    ]
-    return zoomed_in
-
-
-array = (12, 72, 91)
-
-zoom_2x = zoom_array(array)
-
-zoom_3x = zoom_array(array, 3)
+def safely_get_value(dct: Dict[str, T], key: str, default: Optional[T] = None) -> Optional[T]:
+    """More involved type annotations"""
+    if key in dct:
+        return dct[key]
+    else:
+        return default
